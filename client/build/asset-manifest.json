@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.48ed50c3.css",
+    "main.js": "/static/js/main.3cfb02e8.js",
+    "static/media/loggedoutHomeImg.png": "/static/media/loggedoutHomeImg.2c73a88f164173401e08.png",
+    "static/media/homeImg.png": "/static/media/homeImg.24cf01a2c4483ca3dc51.png",
+    "static/media/Logo.svg": "/static/media/Logo.b643567345b0eb6825acabf5d2791b1b.svg",
+    "static/media/stepperImg.png": "/static/media/stepperImg.244d03c4659e20be3547.png",
+    "index.html": "/index.html",
+    "static/media/eye-slash.svg": "/static/media/eye-slash.4b94b29c111edd86d2cb7a8a6cca0462.svg",
+    "static/media/file-earmark-text.svg": "/static/media/file-earmark-text.410cb1071a9cfa3fb65da9f2c6f0a286.svg",
+    "static/media/telephone.svg": "/static/media/telephone.4cf53040acfea6505f35ed115be5937a.svg",
+    "static/media/eye.svg": "/static/media/eye.3471af135131c99111dd66e3899f35ac.svg",
+    "static/media/pencil.svg": "/static/media/pencil.de6a5d1c262f7c07a0fcb089587f9919.svg",
+    "static/media/trash.svg": "/static/media/trash.0589a155c6c865f7bfea79f2e31dea98.svg",
+    "static/media/location.svg": "/static/media/location.6a734bad2ac61bd53b45b71234f5d8d4.svg",
+    "static/media/clock.svg": "/static/media/clock.ddc94b4ac134c97c7779dbf5868a41f6.svg",
+    "main.48ed50c3.css.map": "/static/css/main.48ed50c3.css.map",
+    "main.3cfb02e8.js.map": "/static/js/main.3cfb02e8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48ed50c3.css",
+    "static/js/main.3cfb02e8.js"
+  ]
+}

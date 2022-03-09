@@ -1,0 +1,176 @@
+.account-setup-page {
+  section {
+    &:first-of-type {
+      height: 100vh;
+    }
+
+    .card {
+      background-color: $app-bg-color;
+      border: none;
+      margin-top: 10rem;
+      max-width: 50rem;
+      display: flex;
+      flex-direction: column;
+
+      @include screen_up_from($lg_screen) {
+        flex-direction: row;
+        // border: 1px solid rgba(0, 0, 0, 0.125);
+      }
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: 600;
+      margin-top: 1em;
+      margin-bottom: 0.3em;
+
+      & ~ p {
+        margin-bottom: 2em;
+      }
+    }
+
+    form {
+      div {
+        & ~ .form-group {
+          margin-top: 1.5em;
+        }
+      }
+    }
+
+    .input-group.upload-portfolio {
+      width: 100%;
+    }
+  }
+
+  .MuiStepper-root {
+    width: 100%;
+    margin-top: 4em;
+
+    @include screen_up_from($lg_screen) {
+      margin-top: 4em;
+      flex-direction: column;
+      width: 2em;
+      height: 8.3em;
+    }
+  }
+
+  .MuiSvgIcon-root {
+    display: none;
+  }
+
+  .MuiStep-root {
+    $step_min_height: 0.5em;
+    border-radius: $step_min_height $step_min_height;
+    height: $step_min_height;
+    width: 23%;
+    background-color: #e1e1e0;
+
+    &.active-step {
+      background-color: lighten(map.get($theme-colors, "bronze"), 18%);
+    }
+
+    &.Mui-completed {
+      background-color: map.get($theme-colors, "bronze");
+    }
+
+    @include screen_up_from($lg_screen) {
+      $step_min_height: 1.4em;
+      height: $step_min_height;
+      width: $step_min_height;
+      border-radius: 50% 50%;
+    }
+  }
+
+  .MuiStepConnector-line {
+    border-color: transparent;
+  }
+
+  .form-label,
+  p {
+    span {
+      margin-left: 0.1em;
+      color: lighten(map.get($theme-colors, "rufous"), 20%);
+    }
+  }
+
+  .btn-toolbar {
+    margin: 0 6%;
+    button {
+      width: 46%;
+      max-width: 18rem;
+    }
+  }
+
+  .google-sync-btn {
+    width: 70%;
+    background-color: transparent !important;
+    color: map.get($theme-colors, "rufous");
+    border: 0.12em solid map.get($theme-colors, "rufous") !important;
+
+    i {
+      margin-right: 0.2em;
+    }
+  }
+
+  button {
+    height: 2.2em;
+    @include SolidButton;
+    &.add-new-ref-btn {
+      background-color: transparent !important;
+      color: map.get($theme-colors, "rufous");
+      border: none;
+    }
+  }
+
+  .sync-calendar-illustration {
+    width: auto;
+    height: 16em;
+  }
+}
+
+.step-screen-1 {
+  .hstack {
+    width: 100%;
+    & > .form-floating {
+      width: 50% !important;
+      margin-top: 1.6em !important;
+    }
+  }
+}
+
+.step-screen-2 {
+  .form-check {
+    margin-top: 0.4em;
+
+    input {
+      margin-top: -0.09rem;
+    }
+  }
+
+  .hstack {
+    margin-top: 0.4em;
+    &:first-of-type {
+      margin-top: 2em !important;
+    }
+  }
+
+  .MuiButton-root {
+    margin-top: 2em !important;
+  }
+
+  .upload-btn-container {
+    padding: 0;
+  }
+
+  .input-group {
+    .form-label {
+      margin-top: 1em !important;
+    }
+  }
+}
+
+.step-screen-3 {
+  .form-label {
+    margin-top: 1rem;
+  }
+}

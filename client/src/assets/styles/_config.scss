@@ -1,0 +1,85 @@
+// Colors
+$theme-colors: (
+  "richblack": #101b21,
+  "deepspace": #4d6b76,
+  "bronze": #d47f24,
+  "rufous": #9b2915,
+  "linen": #efe6dd,
+);
+
+// Insert Desired Color Filter here
+// use https://angel-rs.github.io/css-color-filter-generator/ to generate filter values
+$color-filters: (
+  richblack: (
+    invert: 8%,
+    sepia: 9%,
+    saturate: 2238%,
+    hue-rotate: 157deg,
+    brightness: 0%,
+    contrast: 96%,
+  ),
+  deepspace: (
+    invert: 38%,
+    sepia: 19%,
+    saturate: 613%,
+    hue-rotate: 150deg,
+    brightness: 0%,
+    contrast: 87%,
+  ),
+  bronze: (
+    invert: 48%,
+    sepia: 78%,
+    saturate: 494%,
+    hue-rotate: 350deg,
+    brightness: 97%,
+    contrast: 88%,
+  ),
+  rufous: (
+    invert: 16%,
+    sepia: 73%,
+    saturate: 2447%,
+    hue-rotate: 352deg,
+    brightness: 103%,
+    contrast: 94%,
+  ),
+  linen: (
+    invert: 98%,
+    sepia: 91%,
+    saturate: 870%,
+    hue-rotate: 293deg,
+    brightness: 0%,
+    contrast: 87%,
+  ),
+);
+
+$app-bg-color: #fbfaf9;
+$danger-color: #d60a0a;
+$success-color: #099e36;
+$alert-text-color: #fff9;
+
+@each $name, $color in $theme-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+@mixin SvgFill($color) {
+  $map: $color-filters;
+  filter: invert(map-deep-get($map, $color, "invert"))
+    sepia(map-deep-get($map, $color, "sepia"))
+    saturate(map-deep-get($map, $color, "saturate"))
+    hue-rotate(map-deep-get($map, $color, "hue-rotate"))
+    brightness(map-deep-get($map, $color, "brightness"))
+    contrast(map-deep-get($map, $color, "contrast"));
+}
+
+// Screen Width
+$sm_screen: 360px;
+$md_screen: 768px;
+$lg_screen: 992px;
+$xl_screen: 1024px;
+$xxl_screen: 1366px;
+$xxxl_screen: 1920px;

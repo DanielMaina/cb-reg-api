@@ -1,0 +1,90 @@
+.auth_page {
+  width: 100%;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  input::placeholder {
+    font-size: 80%;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .btn {
+    height: 2.5em;
+    &:hover {
+      color: white;
+    }
+  }
+
+  .abcRioButton {
+    @include OutlinedButton;
+  }
+
+  .password-input {
+    position: relative;
+
+    .img-container {
+      position: absolute;
+      top: 54%;
+      right: 0.7em;
+      transform: translateY(-50%);
+      cursor: pointer;
+      opacity: 0.5;
+
+      .pres-icon.form-icon {
+        height: 1.2em;
+        width: 1.2em;
+        @include SvgFill("deepspace");
+      }
+    }
+  }
+
+  .auth_box {
+    max-width: 400px;
+    width: 100%;
+    padding: 2.7rem 1.7rem;
+    margin-top: 6rem;
+  }
+}
+
+.member_text {
+  margin-top: -20px;
+  margin-bottom: 5vh;
+}
+
+.h6_custom {
+  display: flex;
+  flex-direction: row;
+  color: grey;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+
+  &:before {
+    margin-right: 10px;
+  }
+
+  &:after {
+    margin-left: 10px;
+  }
+}
+
+.h6_custom:before,
+.h6_custom:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+
+.form-control:valid {
+  background-color: #f1f3f4 !important;
+  border-color: #d7e1e5 !important;
+}

@@ -1,0 +1,35 @@
+.app-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 5000;
+}
+
+/* Brand Logo Container */
+
+.logo-container {
+  width: 6em;
+  height: auto;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+
+  .navbar-brand {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 2px 3px 3px -1px #9b2915;
+}
+
+.navbar-toggler-icon {
+  fill: #9b2915 !important;
+}

@@ -1,0 +1,30 @@
+/*** Calendar ***/
+.sdp--month-picker {
+  padding: 0 13%;
+}
+
+.sdp--square-btn__shadowed,
+.sdp--square-btn__shadowed:focus:hover {
+  box-shadow: none !important;
+  color: map.get($theme-colors, "rufous");
+}
+
+.sdp--date-btn {
+  border-radius: 50% 50% !important;
+
+  &__selected {
+    background-color: lighten(map.get($theme-colors, "rufous"), 30%) !important;
+  }
+
+  &__scheduled {
+    background-color: lighten(map.get($theme-colors, "bronze"), 20%) !important;
+  }
+
+  &__scheduled ~ &__scheduled {
+    background-color: lighten(map.get($theme-colors, "bronze"), 30%) !important;
+  }
+
+  &.has-events {
+    background-color: lighten(map.get($theme-colors, "rufous"), 54%) !important;
+  }
+}

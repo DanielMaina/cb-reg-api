@@ -1,0 +1,53 @@
+/**** Button ****/
+@mixin Button {
+  color: map.get($theme-colors, "rufous");
+  border-width: 0 !important;
+  border-radius: 6px !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+@mixin SolidButton {
+  @include Button;
+  color: white;
+  background-color: map.get($theme-colors, "rufous");
+  &:hover {
+    background-color: lighten(map.get($theme-colors, "rufous"), 20%);
+    // color: lighten(map.get($theme-colors, "rufous"), 20%) !important;
+    border: 0.12em solid lighten(map.get($theme-colors, "rufous"), 20%) !important;
+    font-weight: 500;
+  }
+}
+@mixin OutlinedButton {
+  @include Button;
+  background-color: white !important;
+  color: map.get($theme-colors, "rufous") !important;
+  box-shadow: 0px 0px 0px 1.3px map.get($theme-colors, "rufous") !important;
+  font-weight: 500;
+  border: none;
+  &:hover {
+    color: lighten(map.get($theme-colors, "rufous"), 20%) !important;
+    box-shadow: 0px 0px 0px 1.3px lighten(map.get($theme-colors, "rufous"), 20%) !important;
+    font-weight: 500;
+  }
+}
+
+.solid-btn {
+  @include SolidButton;
+}
+
+.outlined-btn {
+  @include OutlinedButton;
+}
+
+.btn-primary:focus {
+  @include SolidButton;
+}
+
+.back-btn {
+  @include OutlinedButton;
+}
+
+.MuiButton-root {
+  @include OutlinedButton;
+}

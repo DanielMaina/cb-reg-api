@@ -1,0 +1,22 @@
+@mixin Alert {
+  color: $alert-text-color;
+  text-align: center;
+  padding: 10px 0;
+  letter-spacing: 1.3px;
+}
+
+.errMsg {
+  background: $danger-color;
+  @include Alert;
+}
+
+.successMsg {
+  background: $success-color;
+  @include Alert;
+}
+
+.error-text {
+  margin: 0.6em;
+  font-size: 0.8em;
+  color: $danger-color;
+}

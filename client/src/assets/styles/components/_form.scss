@@ -1,0 +1,34 @@
+form {
+  .form-affix-top {
+    position: absolute;
+    height: 2em;
+    top: -1.9em;
+    border-radius: 0.3em 0.3em 0em 0;
+    padding: 0.2em 0.8em;
+    background-color: inherit;
+  }
+
+  .ant-input,
+  .ant-picker,
+  .ant-picker-focused {
+    border-color: #d7e1e5;
+    box-shadow: none !important;
+    &:hover,
+    &:focus {
+      border-color: lighten(map.get($theme-colors, "rufous"), 30%) !important;
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+:-ms-input-placeholder {
+  font-style: italic;
+}

@@ -1,0 +1,103 @@
+// Use "@use '<file_name_without_extension>'" to load plain css, otherwise use "@import '<file_name_without_extension>'"
+// For .scss files, name the file with a prefix "_" to import without .scss extension
+// refer to sass docs: https://sass-lang.com/documentation/
+@use "sass:map";
+@use "sass:string";
+@import "./reset";
+@import "antd/dist/antd.css";
+@import "./functions";
+@import "./config";
+@import "./responsive_mixins";
+@import "./helpers";
+@import "./components";
+@import "./pages";
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif; */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  text-decoration: none;
+  overflow-x: hidden;
+  background-color: $app-bg-color;
+}
+
+main {
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: map.get($theme-colors, "rufous") !important;
+}
+
+// Form Inner Label / Placeholder text color
+
+$placeholder_text_color: #777777;
+
+::placeholder {
+  color: $placeholder_text_color !important;
+}
+
+:-ms-input-placeholder {
+  color: $placeholder_text_color !important;
+}
+
+.form-floating {
+  label {
+    color: $placeholder_text_color;
+  }
+
+  ::placeholder {
+    color: transparent !important;
+  }
+
+  :-ms-input-placeholder {
+    color: transparent !important;
+  }
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  transform: translateY(-3px);
+  border-radius: 50%;
+}
+
+input:-internal-autofill-selected {
+  background-color: -internal-light-dark(
+    rgb(254, 232, 232),
+    lighten(map.get($theme-colors, "rufous"), 30%)
+  ) !important;
+  color: -internal-light-dark(
+    map.get($theme-colors, "rufous"),
+    white
+  ) !important;
+}
+
+// Presentational Icons
+.pres-icon.form-icon {
+  user-select: none;
+  display: block !important;
+}

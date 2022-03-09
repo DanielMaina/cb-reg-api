@@ -1,0 +1,335 @@
+.your-calendar-page {
+  min-height: 100vh;
+  padding: 0 4vw;
+
+  .wrapper {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    @include screen_up_from($lg_screen) {
+      width: 80%;
+    }
+  }
+
+  section {
+    width: 100%;
+    max-width: 1366px;
+    &:first-of-type {
+      min-height: 100vh;
+
+      // & > .col-12 {
+      //   height: 100%;
+      // }
+    }
+  }
+
+  h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    //margin-left: 1.3em;
+    margin-bottom: 0.7em;
+  }
+
+  .col-md-6:not(.ant-form-item-label) {
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    // &:first-of-type {
+    //   background-color: green;
+    // }
+  }
+
+  form.schedule-event-form {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 4em;
+    margin-bottom: 3em;
+    width: 100%;
+    max-width: 92vw;
+
+    border-radius: 0.4em 0.4em 0.4em 0.4em !important;
+    padding: 1.3em;
+    background-color: #ffe4df;
+    @include screen_up_from($md_screen) {
+      background-color: #eefbe6;
+      margin-left: 1.8em;
+      max-width: 26rem;
+      border-radius: 0 0.3em 0.3em 0.3em !important;
+      margin-top: 16.5em;
+    }
+
+    label {
+      margin-right: 1em;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    input,
+    .ant-picker,
+    textarea {
+      height: 3em;
+      border-radius: 0.3em !important;
+      background-color: #fafafa;
+    }
+
+    .ant-picker input {
+      height: 3em-0.6em;
+    }
+
+    .btn-group {
+      display: flex;
+      height: 40px;
+    }
+
+    .ant-row {
+      flex-flow: row;
+    }
+
+    .ant-col {
+      flex: auto;
+      max-width: max-content;
+    }
+
+    .ant-form-item-control-input-content {
+      display: flex;
+      justify-content: flex-end;
+
+      & > button {
+        &:nth-of-type(1) {
+          @include OutlinedButton;
+          margin-right: 0.9em;
+        }
+        &:nth-of-type(2) {
+          @include SolidButton;
+          margin-left: 0.9em;
+        }
+
+        width: 41%;
+        max-width: 10em;
+        height: 3em;
+        @include screen_up_from($md_screen) {
+          width: 26%;
+          height: 2.6em;
+        }
+      }
+    }
+
+    .contact-group {
+      margin-bottom: 1em;
+      .ant-form-item-control-input-content {
+        flex-direction: column;
+      }
+      .ant-form-item:nth-of-type(3) {
+        margin-bottom: 0.6em !important;
+      }
+    }
+
+    .ant-form-item-control,
+    .ant-picker {
+      flex-grow: 3;
+      max-width: 100%;
+    }
+
+    .ant-form-item-required {
+      &::before {
+        display: none !important;
+      }
+    }
+
+    .ant-form-item-label {
+      padding-top: 0.3em;
+      padding-bottom: 0 !important;
+      svg {
+        height: 1.1rem !important;
+        width: 1.1rem !important;
+      }
+    }
+
+    .form-affix-top {
+      left: 1.4em;
+      border-radius: 0.4em 0.4em 0 0;
+      @include screen_up_from($md_screen) {
+        left: 0;
+      }
+    }
+
+    .form-item-group p {
+      padding: 0 0.7em;
+      line-height: 3em;
+    }
+
+    textarea {
+      height: 7.8em;
+    }
+  }
+
+  .calendar-container-group {
+    margin: 0 auto;
+    margin-top: 7.6rem;
+    @include screen_up_from($md_screen) {
+      margin-top: 10rem;
+      margin-right: 1.6em;
+    }
+  }
+
+  .calendar-container {
+    width: max-content;
+
+    .sdp {
+      width: 26rem;
+      max-width: 86vw;
+      height: max-content; // border: 1px solid #f0f0f0;
+
+      @include screen_up_from($md_screen) {
+        width: 24em;
+      }
+      @include screen_btw(412px, 924px) {
+        width: 22rem;
+      }
+      border-radius: 0.5em;
+      &--month-picker {
+        margin: 0.8em auto;
+      }
+      &--month-name {
+        font-weight: 600;
+        text-align: center;
+      }
+
+      &--dates-grid {
+        height: 19em;
+        margin: 0 auto;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .add-new-schedule-btn {
+    @include OutlinedButton;
+    font-size: 0.8em;
+    width: max-content;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0.4em 0.1em;
+    &:hover {
+      border: none !important;
+    }
+  }
+
+  .add-more-contact-btn {
+    @include OutlinedButton;
+    background-color: transparent !important;
+    padding: 0.2em !important;
+    color: map.get($theme-colors, "rufous");
+    border: none !important;
+    &:hover {
+      border: none !important;
+    }
+    box-shadow: none;
+  }
+
+  .scheduled-events {
+    margin-top: -8rem;
+    margin: 0 auto;
+    max-width: 100%;
+
+    @include screen_up_from($md_screen) {
+      margin: 0;
+      margin-top: 14.8rem;
+      max-width: 31em;
+    }
+
+    .accordion-body {
+      padding-bottom: 1.3em;
+      background-color: lighten(map.get($theme-colors, "bronze"), 44%);
+      border-radius: 0 0 0.4rem 0.4rem;
+      max-width: 100%;
+      @include screen_up_from($md_screen) {
+        max-width: 31em;
+      }
+    }
+
+    .accordion-header {
+      button {
+        padding: 1em 2.2em;
+        border-radius: 0.4rem 0.4rem 0 0;
+        color: map.get($theme-colors, "richblack") !important;
+        background-color: lighten(map.get($theme-colors, "bronze"), 40%);
+        transition: all 0.01s ease-in;
+
+        &.collapsed {
+          border-radius: 0.4rem;
+        }
+
+        &::after {
+          display: none;
+        }
+
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+        }
+
+        .hstack {
+          margin-left: auto;
+
+          [role="button"] {
+            border: none !important;
+            padding: 0 0.4em;
+            padding-top: 0.4em;
+            border: none;
+          }
+
+          img {
+            margin-right: 0em;
+            @include SvgFill("rufous");
+            opacity: 0.8;
+            &:hover {
+              @include SvgFill("bronze");
+            }
+          }
+        }
+      }
+      span {
+        &:first-of-type {
+          font-weight: 600;
+          margin-right: 1.6em;
+          width: 7em;
+        }
+        &:nth-of-type(2) {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    .accordion-item {
+      margin-bottom: 0.4em;
+      border: none;
+      max-width: 100%;
+      @include screen_up_from($md_screen) {
+        max-width: 31em;
+      }
+    }
+
+    .accordion-collapse.show {
+      .accordion-body {
+        margin-bottom: 0.8em;
+      }
+    }
+
+    .ant-divider {
+      margin: 1em 0;
+    }
+
+    .hstack {
+      img {
+        @include SvgFill("richblack");
+        height: 1.2em;
+        width: 1.2em;
+        margin-right: 1em;
+      }
+    }
+  }
+}
